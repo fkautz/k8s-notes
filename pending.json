@@ -1,0 +1,98 @@
+{
+    "kind": "Pod",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "ruby-ex-1-hhmaj",
+        "generateName": "ruby-ex-1-",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/pods/ruby-ex-1-hhmaj",
+        "uid": "bf9ae7af-fe6e-11e6-a3e9-ce1b5614c047",
+        "resourceVersion": "1230",
+        "creationTimestamp": "2017-03-01T11:03:49Z",
+        "labels": {
+            "app": "ruby-ex",
+            "deployment": "ruby-ex-1",
+            "deploymentconfig": "ruby-ex"
+        },
+        "annotations": {
+            "kubernetes.io/created-by":
+"{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicationController\",\"namespace\":\"default\",\"name\":\"ruby-ex-1\",\"uid\":\"bd697dfd-fe6e-11e6-a3e9-ce1b5614c047\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1228\"}}\n",
+            "openshift.io/container.ruby-ex.image.entrypoint":
+"[\"container-entrypoint\",\"/bin/sh\",\"-c\",\"$STI_SCRIPTS_PATH/usage\"]",
+            "openshift.io/deployment-config.latest-version": "1",
+            "openshift.io/deployment-config.name": "ruby-ex",
+            "openshift.io/deployment.name": "ruby-ex-1",
+            "openshift.io/generated-by": "OpenShiftNewApp",
+            "openshift.io/scc": "restricted"
+        }
+    },
+    "spec": {
+        "volumes": [
+            {
+                "name": "default-token-4b1yw",
+                "secret": {
+                    "secretName": "default-token-4b1yw",
+                    "defaultMode": 420
+                }
+            }
+        ],
+        "containers": [
+            {
+                "name": "ruby-ex",
+                "image":
+"172.30.45.92:5000/default/ruby-ex@sha256:53ab21552d0873265b2e06f00bc29f3b4699ecb7c5a7b77b2d189e44b2c3ce1b",
+                "ports": [
+                    {
+                        "containerPort": 8080,
+                        "protocol": "TCP"
+                    }
+                ],
+                "resources": {},
+                "volumeMounts": [
+                    {
+                        "name": "default-token-4b1yw",
+                        "readOnly": true,
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                    }
+                ],
+                "terminationMessagePath": "/dev/termination-log",
+                "imagePullPolicy": "Always",
+                "securityContext": {
+                    "capabilities": {
+                        "drop": [
+                            "KILL",
+                            "MKNOD",
+                            "SETGID",
+                            "SETUID",
+                            "SYS_CHROOT"
+                        ]
+                    },
+                    "privileged": false,
+                    "seLinuxOptions": {
+                        "level": "s0:c1,c0"
+                    },
+                    "runAsUser": 1000000000
+                }
+            }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "securityContext": {
+            "seLinuxOptions": {
+                "level": "s0:c1,c0"
+            },
+            "fsGroup": 1000000000
+        },
+        "imagePullSecrets": [
+            {
+                "name": "default-dockercfg-69mde"
+            }
+        ]
+    },
+    "status": {
+        "phase": "Pending"
+    }
+}
