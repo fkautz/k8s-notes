@@ -1,5 +1,22 @@
-* Agent
-* CNI
+
+
+Pod Creation Lifecycle:
+===
+
+* [Start state JSON](pending.json)
+* [Running state JSON](running.json)
+
+Example Flow from [OpenStack Kuryr-Kubernetes](https://github.com/openstack/kuryr-kubernetes):
+
+Definitions
+---
+* User - A user or client interacting with kubernetes requesting the creation of a new pod
+* Kuryr Controller - A centralized service which watches for pod create events and sets up network ports on neutron for the pod to use. The controller syncrhronizes kubernetes and neutron state. The controller is not responsible for directly creating the linux interface or manipulating the network namespace.
+* Kubernetes API - The interface kubernetes uses for monitoring and manipulating the cluster state
+* Kubelet - An agent that runs on a compute node. It is responsible for spawning pods and containers. Will execute a CNI plugin to set up networking
+* CNI Plugin - Responsible for creating the linux interface and moving the interface into the correct namespace.
+
+![Pod Creation Workflow Diagram](https://raw.githubusercontent.com/openstack/kuryr-kubernetes/master/doc/images/pod_creation_flow.png)
 
 ```sh
 $ oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-ex.git
