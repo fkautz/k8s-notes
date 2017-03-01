@@ -11,7 +11,11 @@ Definitions
 * Kuryr Controller - A centralized service which watches for pod create events and sets up network ports on neutron for the pod to use. The controller syncrhronizes kubernetes and neutron state. The controller is not responsible for directly creating the linux interface or manipulating the network namespace.
 * Kubernetes API - The interface kubernetes uses for monitoring and manipulating the cluster state
 * Kubelet - An agent that runs on a compute node. It is responsible for spawning pods and containers. Will execute a CNI plugin to set up networking
-* CNI Plugin - Responsible for creating the linux interface and moving the interface into the correct namespace.
+* CNI Plugin - Responsible for creating the linux interface and moving the interface into the correct namespace. There are three basic commands CNI plugins must support: ADD, DELETE, VERSION.
+
+[CNI Plugin Parameters](https://github.com/containernetworking/cni/blob/master/SPEC.md#parameters)
+
+[CNI Template Code](https://github.com/containernetworking/cni/blob/master/pkg/skel/skel.go)
 
 ![Pod Creation Workflow Diagram](https://raw.githubusercontent.com/openstack/kuryr-kubernetes/master/doc/images/pod_creation_flow.png)
 
