@@ -3,8 +3,6 @@
 Pod Creation Lifecycle:
 ===
 
-Example Flow from [OpenStack Kuryr-Kubernetes](https://github.com/openstack/kuryr-kubernetes):
-
 Definitions
 ---
 * User - A user or client interacting with kubernetes requesting the creation of a new pod
@@ -16,6 +14,9 @@ Definitions
 [CNI Plugin Parameters](https://github.com/containernetworking/cni/blob/master/SPEC.md#parameters)
 
 [CNI Template Code](https://github.com/containernetworking/cni/blob/master/pkg/skel/skel.go)
+
+Example Flow from [OpenStack Kuryr-Kubernetes](https://github.com/openstack/kuryr-kubernetes):
+---
 
 ![Pod Creation Workflow Diagram](https://raw.githubusercontent.com/openstack/kuryr-kubernetes/master/doc/images/pod_creation_flow.png)
 
