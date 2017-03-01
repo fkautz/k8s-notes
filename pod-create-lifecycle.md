@@ -17,7 +17,7 @@ Definitions
 
 Pod state example from Openshift
 ---
-* [Start state JSON](pending.json)
+* [Pending state JSON](pending.json)
 * [Running state JSON](running.json)
 
 ```sh
