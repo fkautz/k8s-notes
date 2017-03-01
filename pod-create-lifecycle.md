@@ -22,6 +22,15 @@ Pod state example from Openshift
 
 ```sh
 $ oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-ex.git
+```
+
+```sh
+$ oc get pods --watch
+NAME                      READY     STATUS    RESTARTS   AGE
+docker-registry-1-jgu00   1/1       Running   0          35m
+router-1-9rjjw            1/1       Running   0          35m
+ruby-ex-1-build           1/1       Running   0          57s
+NAME               READY     STATUS    RESTARTS   AGE
 ruby-ex-1-deploy   0/1       Pending   0          1s
 ruby-ex-1-deploy   0/1       Pending   0         1s
 ruby-ex-1-deploy   0/1       ContainerCreating   0         1s
