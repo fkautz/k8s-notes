@@ -3,9 +3,6 @@
 Pod Creation Lifecycle:
 ===
 
-* [Start state JSON](pending.json)
-* [Running state JSON](running.json)
-
 Example Flow from [OpenStack Kuryr-Kubernetes](https://github.com/openstack/kuryr-kubernetes):
 
 Definitions
@@ -17,6 +14,11 @@ Definitions
 * CNI Plugin - Responsible for creating the linux interface and moving the interface into the correct namespace.
 
 ![Pod Creation Workflow Diagram](https://raw.githubusercontent.com/openstack/kuryr-kubernetes/master/doc/images/pod_creation_flow.png)
+
+Pod state example from Openshift
+---
+* [Start state JSON](pending.json)
+* [Running state JSON](running.json)
 
 ```sh
 $ oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-ex.git
